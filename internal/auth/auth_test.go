@@ -15,7 +15,7 @@ func TestGetApiKeyValidKey(t *testing.T) {
 		return
 	}
 
-	if res != "abc1234" {
+	if res != "abc123" {
 		t.Errorf("got %q, want abc123", res)
 	}
 }
