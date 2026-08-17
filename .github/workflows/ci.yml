@@ -8,8 +8,7 @@ jobs:
   tests:
     name: Tests
     runs-on: ubuntu-latest
-
-    steps:
+steps:
       - name: Check out code
         uses: actions/checkout@v6
 
@@ -20,3 +19,19 @@ jobs:
 
       - name: Force Failure
         run: go test ./... --cover
+
+  style:
+    name: Style
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v6
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.26.0"
+
+      - name: code formatter
+        run: go fmt ./...
